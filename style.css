@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html{
+    overflow-x: hidden;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: bold;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #d9e1e8;
+    width: 100vw;
+    height: 100vh;
+}
+.items-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.item_1,.item_2,.item_3{
+    height: fit-content;
+    width: fit-content;
+    background-color: #ecf0f3;
+    border-radius: 1em;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.item_1{
+    width: clamp(24rem,40vw,40vw);
+    height: 40vh;
+    top:10%;
+    left: 36%;
+    display: flex;
+}
+.item_1_left{
+    width: clamp(12rem,50vw,50vw);
+    padding: clamp(1rem,3vw,3vw);
+    padding-block: clamp(2rem,5vw,5vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(1rem,1.2vw,1.2vw);
+}
+h1{
+    font-size: clamp(1.8rem,2vw,2vw);
+}
+p{
+    font-size: clamp(.7rem,.9vw,.9vw);
+}
+.btn_black{
+    background-color: black;
+    color: #fda4ac;
+    height: fit-content;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    padding: clamp(.6rem,.8vw,.8vw);
+    padding-inline: clamp(1.6rem,1.8vw,1.8vw);
+    margin-top: clamp(.3rem,.5vw,.5vw);
+    font-size: clamp(.6rem,.8vw,.8vw);
+    cursor: pointer;
+}
+.btn_black:hover{
+    background-color: #fda4ac;
+    color: black;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+}
+.item_1_right{
+    width: clamp(14rem,40vw,40vw);
+    height: 100%;
+    background: url("./images/shoes_1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-left: .35em solid #fda4ac;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+
+.item_2{
+    width: clamp(25rem,30vw,30vw);
+    height: 27vh;
+    top: 45%;
+    left: 25%;
+    display: flex;
+}
+.item_2_left{
+    width: clamp(12rem,50vw,50vw);
+    height: 100%;
+    background: url("./images/shoes_2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+.item_2_right{
+    width: clamp(13rem,70vw,70vw);
+    padding: clamp(2rem,2vw,2vw);
+    padding-block: clamp(4rem,4vw,4vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: clamp(2rem,2vw,2vw);
+    margin-bottom:clamp(2rem,2vw,2vw);
+    position: relative;
+}
+h2{
+    font-weight: 400;
+    margin-top: clamp(.8rem,1vw,1vw);
+    font-size: clamp(1rem,1.2vw,1.2vw);
+}
+.item_price{
+    font-size: clamp(1.6rem,1.8vw,1.8vw);
+}
+.item_3{
+    width: clamp(16rem,16vw,16vw);
+    height: 30vh;
+    left: 52%;
+    top:60%;
+    padding: clamp(1.8rem,2vw,2vw);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn_pink {
+    background-color: #fda4ac;
+    color: white;
+    height: fit-content;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    padding: clamp(.43rem,.45vw,.45vw);
+    padding-inline: clamp(0.8rem,1vw,1vw);
+    border-radius: .4em;
+    font-size: clamp(.6rem,.8vw,.8vw);
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    cursor: pointer;
+}
+.btn_pink:hover{
+    color: #fda4ac;
+    background-color: black;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+}
+
+/* RESPONSIVE SETTINGS*/
+@media screen and (max-width:1340px){
+    .items-container{
+        height: fit-content;
+        padding-block: clamp(3rem,3vw,3vw);
+        gap: clamp(1rem,1vw,1vw);
+    }
+    .item_1,.item_2,.item_3{
+        position: static;
+        width: 75vw;
+    }
+    .item_1_right{
+        width: clamp(14rem,25vw,25vw);
+    }
+}
+
+@media screen and (max-width:700px){
+    .items-container{
+        padding-block: 0;
+    }
+    .item_1,.item_2,.item_3{
+        width: 100vw;
+        border-radius: 0;
+    }
+    .item_1{
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        padding-block: clamp(2rem,2vw,2vw);
+    }
+    .item_1_left{
+        align-items: center;
+        text-align: center;
+        width: 95vw;
+    }
+    .item_1_right{
+        background-size:cover;
+        width: 15rem;
+        height: 15rem;
+        border-left: none;
+        border: .35em solid #fda4ac;
+        border-radius: 50%;
+    }
+}
